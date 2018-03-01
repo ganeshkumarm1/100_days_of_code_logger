@@ -48,9 +48,9 @@ def write_log_to_file(file_name, content):
 		file_handle.write(content)
 
 def push_to_repo(commit_message):
-	os.system("cd " + log_folder)
-	os.system("git add -A")
-	os.system("git commit -m " + commit_message)
+	os.chdir(log_folder)
+	os.system("git add log.md")
+	os.system("git commit -m \"" + commit_message + "\"")
 	os.system("git push origin master")
 
 def main():
