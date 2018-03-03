@@ -36,7 +36,9 @@ def get_log_markdown(log_details):
 	day_template = Template("### Day $day: $date\n\n")
 	progress_template = Template("**Today's Progress**: $progress\n\n")
 	links_template = Template("$i. [$text]($url)\n")
-	log_md = day_template.substitute(day=log_details['day'], date=log_details['date']) + progress_template.substitute(progress=log_details['progress']) + "**Link(s) to work**\n"
+	log_md = day_template.substitute(day=log_details['day'], date=log_details['date']) + progress_template.substitute(progress=log_details['progress'])
+	if len(log_details['links']) > 0:
+		log_md += "**Link(s) to work**\n"
 	i = 1
 	for l in log_details['links']:
 		log_md += links_template.substitute(i=i, text=l['text'], url=l['url'])
