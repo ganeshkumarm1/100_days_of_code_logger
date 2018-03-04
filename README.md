@@ -5,3 +5,4 @@
 * Download or clone the repo
 * `cd 100_days_of_code_logger`
 * `python setup.py install`
+* After installation, open the command prompt and type `logger`
